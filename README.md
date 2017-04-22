@@ -1,3 +1,24 @@
 # markdone
+`author info:413893093@qq.com` 
+ `Vincent Lau`
+一个极简的记账工具
 
-a tool to mark what you have done
+
+### 技术栈
+#### 服务端
+1.	nodejs	
+2.	express 
+3.	sequelize `promise-base`  `数据库操作`  http://docs.sequelizejs.com/en/latest/
+4.	mysql 
+
+#### 客户端
+1.	微信小程序
+2.	vue
+3.	sass
+4.	antd	`设计标准`
+
+#### 开发工具
+1.	gulp	`工作流`
+2.	webpack `模块化`
+3.	git	`版本控制` `代码仓库`
+4.	npm `依赖管理`
