@@ -11,6 +11,11 @@ let serverConfig = {
         psw:'markdone',
         host:'localhost',
         port:'3306'
+    },
+    userInfo:{
+        // dev  17/04/23
+        pswSecret:'markdone',
+        jwtSecret:'markdone'
     }
 }
 

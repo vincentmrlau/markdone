@@ -11,6 +11,7 @@
 3.	sequelize `promise-base`  `数据库操作`  http://docs.sequelizejs.com/en/latest/
 4.	mysql 
 5.	jwt `https://www.npmjs.com/package/jwt-simple` `处理登录状态`
+6.	crypto `密码加密储存` `http://nodejs.cn/api/crypto.html#crypto_crypto_createhmac_algorithm_key` 
 
 #### 客户端
 1.	微信小程序
