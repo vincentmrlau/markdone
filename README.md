@@ -10,12 +10,13 @@
 2.	express 
 3.	sequelize `promise-base`  `数据库操作`  http://docs.sequelizejs.com/en/latest/
 4.	mysql 
+5.	jwt `https://www.npmjs.com/package/jwt-simple` `处理登录状态`
 
 #### 客户端
 1.	微信小程序
 2.	vue
 3.	sass
-4.	antd	`设计标准`
+4.	antd `iview` `设计标准`
 
 #### 开发工具
 1.	gulp	`工作流`
