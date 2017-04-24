@@ -20,7 +20,10 @@ let sequelize = new Sequelize(
     }
 );
 
-let dbModels = {};
+let dbModels = {
+    sequelize:sequelize,
+    Sequelize:Sequelize
+};
 
 //导入模块
 fs
