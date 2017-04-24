@@ -4,7 +4,7 @@
 'use strict';
 
 const crypto = require('crypto');
-const serverConfig = require('../serverConfig.js');
+const serverConfig = require('../configs/serverConfig.js');
 const jwt = require('jwt-simple');
 
 //密码加密秘钥
