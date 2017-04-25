@@ -38,4 +38,4 @@ fs
         model.sync();
     });
 
-console.log(dbModels)
+module.exports = dbModels;

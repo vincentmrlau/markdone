@@ -1,11 +1,12 @@
 /**
  * Created by 41389 on 2017/4/24.
+ * 用户信息储存
  */
 
 'use strict';
 module.exports = function (sequelize,DataTypes) {
     let User = sequelize.define('userInfo',{
-        id:{
+        user_id:{
             //用户ID
             type:DataTypes.UUID,
             unique:true,
