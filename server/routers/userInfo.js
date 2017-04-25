@@ -16,6 +16,5 @@ let router = express.Router();
 const pswSecret = serverConfig.userInfo.pswSecret;
 const jwtSecret = serverConfig.userInfo.jwtSecret;
 
-let s = userDb.create({openid:1111});
-console.log('1',s)
+
 
