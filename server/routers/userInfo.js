@@ -18,3 +18,5 @@ const jwtSecret = serverConfig.userInfo.jwtSecret;
 
 
 
+module.exports = router;
+
