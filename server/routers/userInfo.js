@@ -16,7 +16,5 @@ let router = express.Router();
 const pswSecret = serverConfig.userInfo.pswSecret;
 const jwtSecret = serverConfig.userInfo.jwtSecret;
 
-
-
 module.exports = router;
 

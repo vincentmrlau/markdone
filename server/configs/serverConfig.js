@@ -16,6 +16,10 @@ let serverConfig = {
         // dev  17/04/23
         pswSecret:'markdone',
         jwtSecret:'markdone'
+    },
+    ports: {
+        port: 3002,
+        ssl: 3003
     }
 }
 
