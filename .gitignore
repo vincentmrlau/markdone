@@ -1,3 +1,9 @@
 
 ## 忽略模块 ##
 /node_modules
+
+## 服务器配置
+/server/configs
+
+## app 模块
+/app/markdone/node_modules

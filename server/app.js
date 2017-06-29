@@ -29,11 +29,13 @@ app.use('/static',express.static('./client/static'));
 // ssl
 const PRIVATE_KEY_DIR = path.join(RESOLVE_NAME, 'ssl', 'private.pem');
 const CERTIFICATE_DIR = path.join(RESOLVE_NAME, 'ssl', 'file.crt');
+const PFX_DIR = path.join(RESOLVE_NAME, 'ssl', 'vincent.pfx');
 const privateKey = fs.readFileSync(PRIVATE_KEY_DIR, 'utf8');
 const certificate = fs.readFileSync(CERTIFICATE_DIR, 'utf8');
+const pfx = fs.readFileSync(PFX_DIR);
 const credentials = {
-    key: privateKey,
-    cert: certificate
+    pfx:pfx,
+    passphrase:'liu5998577'
 }
 
 let httpServer = http.createServer(app);
