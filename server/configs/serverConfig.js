@@ -20,7 +20,8 @@ let serverConfig = {
     ports: {
         port: 3002,
         ssl: 3003
-    }
+    },
+    sslPsw: 'liu5998577'
 }
 
 module.exports = serverConfig;

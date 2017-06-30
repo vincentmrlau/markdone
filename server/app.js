@@ -15,6 +15,8 @@ const configs = require('./configs/serverConfig.js');
 // 服务器监听端口
 const PORT = configs.ports.port;
 const SSL_PORT = configs.ports.ssl;
+// 证书密码
+const SSL_PSW = configs.sslPsw
 
 // 路径
 const RESOLVE_NAME = path.resolve(__dirname)
@@ -25,17 +27,18 @@ const userInfo = require('./routers/userInfo.js');
 
 app.use('/static',express.static('./client/static'));
 
+//TODO header
+
+// use userInfo
+app.use('/user',userInfo)
+
 // 监听
 // ssl
-const PRIVATE_KEY_DIR = path.join(RESOLVE_NAME, 'ssl', 'private.pem');
-const CERTIFICATE_DIR = path.join(RESOLVE_NAME, 'ssl', 'file.crt');
 const PFX_DIR = path.join(RESOLVE_NAME, 'ssl', 'vincent.pfx');
-const privateKey = fs.readFileSync(PRIVATE_KEY_DIR, 'utf8');
-const certificate = fs.readFileSync(CERTIFICATE_DIR, 'utf8');
 const pfx = fs.readFileSync(PFX_DIR);
 const credentials = {
     pfx:pfx,
-    passphrase:'liu5998577'
+    passphrase:SSL_PSW
 }
 
 let httpServer = http.createServer(app);

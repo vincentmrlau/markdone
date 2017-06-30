@@ -14,6 +14,7 @@ import {
 
 export default class markdone extends Component {
   render() {
+    console.log('w')
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>

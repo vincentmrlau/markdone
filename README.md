@@ -16,6 +16,7 @@
 1.	HTTPS: `openssl`
 2.	jwt `https://www.npmjs.com/package/jwt-simple` `处理登录状态`
 3.	crypto `密码加密储存` `http://nodejs.cn/api/crypto.html#crypto_crypto_createhmac_algorithm_key` 
+4. socket: socket.io
 
 ### 客户端
 ####	设计参考：
@@ -23,11 +24,16 @@
 
 ####	微信小程序
 1.	完整功能
+2. 暂时不出
 
 ####	web版本
 1.	vue及其生态（vuex\vue-router\vue-resource等）
 2. 主要开发工具：vue-cli(webpack)
 
 ####	APP
-1.	react-native及其生态
+1.	react-native: 对比weex 生态丰富，对比cordova 体验更佳
 2. 备选：weex,cordova,原生开发
+3. react-navigation
+4. redux	
+5. redux-persist
+6. redux-thunk
