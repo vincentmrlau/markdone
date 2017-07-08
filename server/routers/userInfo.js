@@ -16,5 +16,52 @@ let router = express.Router();
 const pswSecret = serverConfig.userInfo.pswSecret;
 const jwtSecret = serverConfig.userInfo.jwtSecret;
 
+// register by phone
+router.post('/registerByPhone', function (req, res, next) {
+    console.log(req.body)
+    let phone = req.body.phone
+    let psw = req.body.psw
+    userDb
+        .findOrCreate({
+            where: {
+                phone: phone
+            },
+            defaults: {
+                phone: phone,
+                password: crypto.createHmac('sha256', pswSecret).update(psw).digest('hex')
+            }
+        })
+        .spread(function (data, create) {
+            if (create === true) {
+                // success
+                // 返回token
+                let id = data.id
+
+            } else if (create === false) {
+                //error
+                res.json({
+                    code: 'E304',
+                    msg: 'phone number is already existed'
+                })
+            }
+        })
+        .catch(function (e) {
+            console.log(e)
+            res.json({
+                code: 'E500',
+                msg: 'server  error'
+            })
+        })
+
+})
+
+// login
+router.post('/login', function (req, res, next) {
+    console.log(req)
+    res.json({
+        ss:'2'
+    })
+})
+
 module.exports = router;
 

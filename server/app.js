@@ -9,6 +9,10 @@ const https = require('https');
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const bodyParser = require('body-parser')
+
+// 引入log
+const log4js = require('./log/logger.js')
 
 // 引入配置
 const configs = require('./configs/serverConfig.js');
@@ -22,19 +26,29 @@ const SSL_PSW = configs.sslPsw
 const RESOLVE_NAME = path.resolve(__dirname)
 
 let app =  express();
+
+//使用log
+log4js(app)
+// 使用中间件
+/*
+* body 使用 x-www-form-urlencoded
+* */
+app.use(bodyParser.urlencoded())
+
+//TODO header
+
+
 //引入路由
 const userInfo = require('./routers/userInfo.js');
 
 app.use('/static',express.static('./client/static'));
-
-//TODO header
 
 // use userInfo
 app.use('/user',userInfo)
 
 // 监听
 // ssl
-const PFX_DIR = path.join(RESOLVE_NAME, 'ssl', 'vincent.pfx');
+const PFX_DIR = path.join(RESOLVE_NAME, 'configs', 'vincent4u.cn.pfx');
 const pfx = fs.readFileSync(PFX_DIR);
 const credentials = {
     pfx:pfx,

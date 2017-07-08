@@ -9,24 +9,22 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
+import { TabNavigator} from 'react-navigation'
 
-export default class markdone extends Component {
+import ChatScreen from './pages/chat.js'
+
+export default class Welcome extends Component {
+  static navigationOptions = {
+    title:'Welcome'
+  }
   render() {
-    console.log('w')
+    // const { navigate, goBack } = this.props.navigation
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Button title='to chat' />
       </View>
     );
   }
@@ -51,4 +49,27 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('markdone', () => markdone);
+const Mackdone = TabNavigator({
+  Welcome: {
+    screen: Welcome
+  },
+  Chat: {
+    screen:ChatScreen
+  }
+}, {
+  swipeEnabled: true,
+  animationEnabled: true
+})
+
+class Root extends Component{
+  render(){
+    return(
+        <View>
+          <Text>?</Text>
+        </View>
+    )
+  }
+}
+
+
+AppRegistry.registerComponent('markdone', () => Root);
