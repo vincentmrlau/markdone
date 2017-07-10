@@ -1,4 +1,8 @@
-
+/**
+ * Created by liuyiman on 2017/7/10.
+ *
+ *  SETTING PAGE
+ */
 
 import React, {Component} from 'react'
 import {
@@ -6,12 +10,12 @@ import {
     Text
 } from 'react-native'
 
-class Login extends Component {
+class Setting extends Component {
     constructor(props){
         super(props)
     }
     static navigationOptions = {
-        title: 'Login'
+        title: 'Setting'
     }
 
     render() {
@@ -23,4 +27,4 @@ class Login extends Component {
     }
 }
 
-export default Login
+export default Setting

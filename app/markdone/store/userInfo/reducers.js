@@ -5,20 +5,17 @@
 import * as TYPES from './../type.js'
 
 const initialState = {
-    token:'',
-    headshot:'',
-    nickname:'',
-    status: null
+    token: undefined,
+
 }
 
-export default function userInfo(state = initialState, action) {
+export function login (state = initialState, action) {
     switch (action.type){
         case TYPES.USER_LOGIN_DOING:
             return{
                 ...state,
                 status: 'LOGIN_DOING'
             }
-
         default:
             return state
     }

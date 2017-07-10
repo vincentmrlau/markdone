@@ -6,70 +6,36 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  Button
+    AppRegistry
 } from 'react-native';
-import { TabNavigator} from 'react-navigation'
 
-import ChatScreen from './pages/chat.js'
+import { Provider } from 'react-redux'
 
-export default class Welcome extends Component {
-  static navigationOptions = {
-    title:'Welcome'
-  }
-  render() {
-    // const { navigate, goBack } = this.props.navigation
-    return (
-      <View style={styles.container}>
-        <Button title='to chat' />
-      </View>
-    );
-  }
-}
+// 引入stack nav和对应的reducer
+import {ConnectedStackApp, navReducer} from './pages/Navigations'
+console.log(ConnectedStackApp, 'ss',navReducer)
+// 引入store配置
+import configStore from './store/store'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-const Mackdone = TabNavigator({
-  Welcome: {
-    screen: Welcome
-  },
-  Chat: {
-    screen:ChatScreen
-  }
-}, {
-  swipeEnabled: true,
-  animationEnabled: true
+//config store
+const store = configStore({
+    nav: navReducer
+})({
+    blacklist: ['nav']
 })
 
-class Root extends Component{
-  render(){
-    return(
-        <View>
-          <Text>?</Text>
-        </View>
-    )
-  }
+class Markdone extends Component{
+    constructor(props){
+        super(props)
+    }
+    render(){
+        return(
+            <Provider store={store}>
+                <ConnectedStackApp/>
+            </Provider>
+        )
+    }
 }
 
 
-AppRegistry.registerComponent('markdone', () => Root);
+AppRegistry.registerComponent('markdone', () => Markdone);
