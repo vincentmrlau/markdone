@@ -7,14 +7,14 @@ import thunkMiddleware from 'redux-thunk'
 import { persistStore, autoRehydrate } from 'redux-persist'
 import { AsyncStorage } from 'react-native'
 
-import { login } from './userInfo/reducers'
+import { userMsg } from './userInfo/reducers'
 
 /*
 * all reducer except navigation reducer
 * */
 
 let allReducer = {
-    login: login
+    userMsg: userMsg
 }
 
 /*

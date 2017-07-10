@@ -11,7 +11,9 @@ class Login extends Component {
         super(props)
     }
     static navigationOptions = {
-        title: 'Login'
+        title: 'Login',
+        gesturesEnabled: false,
+        headerLeft: null
     }
 
     render() {

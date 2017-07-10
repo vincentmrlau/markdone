@@ -10,6 +10,9 @@ import {
     Text
 } from 'react-native'
 
+// redux
+import {connect} from 'react-redux'
+
 class Mood extends Component {
     constructor(props){
         super(props)
@@ -17,8 +20,18 @@ class Mood extends Component {
     static navigationOptions = {
         title: 'Mood'
     }
-
+    componentWillMount(){
+        console.log('componentWillMount')
+        // 检查token
+        const { token } = this.props.userMsg,
+            {navigate} = this.props.navigation
+        if (token === undefined) {
+            // 跳转到登录
+            navigate('Login')
+        }
+    }
     render() {
+        const {userMsg, navigation} = this.props
         return (
             <View>
                 <Text>s</Text>
@@ -26,5 +39,12 @@ class Mood extends Component {
         )
     }
 }
+function select(state) {
+    console.log('state', state)
+    return{
+        userMsg:state.userMsg
+    }
+}
+const ConnectMood = connect(select)(Mood)
 
-export default Mood
+export default ConnectMood
