@@ -7,14 +7,18 @@
 
 const crypto = require('crypto');
 const serverConfig = require('../configs/serverConfig.js');
-const jwt = require('jwt-simple');
 const express = require('express');
+// userInfo的sequelize module
 const userDb = require('./../models/').userInfo;
+// userInfo的工具包
+const userInfoUtils = require('./../utils/userInfo')
+
+// 创建token的方法
+const createToken = userInfoUtils.createToken
 
 let router = express.Router();
 //密码加密秘钥
 const pswSecret = serverConfig.userInfo.pswSecret;
-const jwtSecret = serverConfig.userInfo.jwtSecret;
 
 // register by phone
 router.post('/registerByPhone', function (req, res, next) {
@@ -28,7 +32,9 @@ router.post('/registerByPhone', function (req, res, next) {
             },
             defaults: {
                 phone: phone,
-                password: crypto.createHmac('sha256', pswSecret).update(psw).digest('hex')
+                password: crypto.createHmac('sha256', pswSecret).update(psw).digest('hex'),
+                // 注册成功就登录一次
+                logins: 1
             }
         })
         .spread(function (data, create) {
@@ -36,7 +42,15 @@ router.post('/registerByPhone', function (req, res, next) {
                 // success
                 // 返回token
                 let id = data.id
-
+                let logins = data.logins
+                let token = createToken(id, logins)
+                res.json({
+                    code: 'S200',
+                    msg: 'login success',
+                    data: {
+                        token: token
+                    }
+                })
             } else if (create === false) {
                 //error
                 res.json({
@@ -55,12 +69,11 @@ router.post('/registerByPhone', function (req, res, next) {
 
 })
 
-// login
-router.post('/login', function (req, res, next) {
-    console.log(req)
-    res.json({
-        ss:'2'
-    })
+/*
+* 手机号码登录
+* */
+router.post('/loginByPhone', function (req, res, next) {
+
 })
 
 module.exports = router;

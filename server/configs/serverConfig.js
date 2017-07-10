@@ -13,9 +13,12 @@ let serverConfig = {
         port:'3306'
     },
     userInfo:{
-        // dev  17/04/23
+        // 密码秘钥
         pswSecret:'markdone',
-        jwtSecret:'markdone'
+        // token秘钥
+        jwtSecret:'markdone',
+        // 过期时间 天
+        expires: 30
     },
     ports: {
         port: 3002,

@@ -41,6 +41,12 @@ module.exports = function (sequelize,DataTypes) {
             //电子邮箱
             type:DataTypes.STRING(50),
             allowNull:true
+        },
+        logins: {
+            // 登录次数
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            defaultValue:0
         }
     },{
 
