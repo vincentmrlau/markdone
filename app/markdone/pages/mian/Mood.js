@@ -27,7 +27,7 @@ class Mood extends Component {
             {navigate} = this.props.navigation
         if (token === undefined) {
             // 跳转到登录
-            navigate('Login')
+            navigate('Register')
         }
     }
     render() {

@@ -3,8 +3,16 @@
 import React, {Component} from 'react'
 import {
     View,
-    Text
+    Text,
+    StyleSheet
 } from 'react-native'
+
+// redux
+import {connect} from 'react-redux'
+
+// icons
+import Icon from 'react-native-vector-icons/Ionicons'
+
 
 class Login extends Component {
     constructor(props){
@@ -13,16 +21,21 @@ class Login extends Component {
     static navigationOptions = {
         title: 'Login',
         gesturesEnabled: false,
-        headerLeft: null
+        header: null
     }
 
     render() {
         return (
             <View>
-                <Text>s</Text>
+                <Text>ALL BEGINNINGS ARE HARD</Text>
             </View>
         )
     }
 }
 
-export default Login
+function select(state) {
+    return {userMsg: state.userMsg}
+}
+const ConnectLogin = connect(select)(Login)
+
+export default ConnectLogin
