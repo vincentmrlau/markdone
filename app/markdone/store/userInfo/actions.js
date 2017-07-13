@@ -12,7 +12,6 @@ export function login(options) {
         dispatch({
             type: TYPES.USER_LOGIN_DOING
         })
-        AlertIOS.alert('login ing')
     }
 }
 
