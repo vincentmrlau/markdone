@@ -40,7 +40,6 @@ class Mood extends Component {
     }
 }
 function select(state) {
-    console.log('state', state)
     return{
         userMsg:state.userMsg
     }

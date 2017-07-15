@@ -17,6 +17,10 @@ import {
 import {connect} from 'react-redux'
 // icon
 import Icon from 'react-native-vector-icons/FontAwesome'
+// action
+import { registerByPhone} from './../../store/userInfo/actions'
+// types
+import * as TYPES from './../../type'
 
 class Register extends Component {
     constructor(props){
@@ -27,6 +31,9 @@ class Register extends Component {
             psw: '',
             rePsw: '',
             warning: '',
+            btnText: '登录',
+            btnDisabled: false,
+            register: false
         }
         // binding this
         this.submit = this.submit.bind(this)
@@ -47,19 +54,44 @@ class Register extends Component {
             Alert.alert('提示', '手机号码或密码不能为空')
             return
         } else {
-            if ( this.state.psw !== this.state.rePsw) {
-                Alert.alert('提示', '两次输入的密码不一样')
-                return
+            // 判断是注册还是登录
+            if ( this.state.register) {
+                // 注册
+                if ( this.state.psw !== this.state.rePsw) {
+                    Alert.alert('提示', '两次输入的密码不一样')
+                    return
+                } else {
+                    // 注册
+                    this.props.dispatch(registerByPhone(this.state.phone, this.state.psw))
+                }
+            } else {
+                // 登录
             }
-        }
-        // 注册
-    }
 
+        }
+    }
+    componentWillReceiveProps () {
+        console.log('props componentWillReceiveProps',this.props.userMsg)
+        let btnText = (this.props.userMsg.loginStatus === TYPES.USER_LOGIN_DOING)?'正在提交...':(this.state.register?'注册':'登录')
+        this.setState({
+            btnDisabled: (this.props.userMsg.loginStatus === TYPES.USER_LOGIN_DOING),
+            btnText: btnText
+        })
+    }
+    componentWillUpdate(){
+        console.log('props componentWillUpdate', this.props.userMsg )
+    }
     render() {
+        console.log('props when render',this.props.userMsg)
+        const reInput = (
+            <View style={style.inputContainer}>
+                <Icon style={style.input.icon} name="lock" size={20}></Icon>
+                <TextInput style={style.input} placeholder={'再次输入密码'} clearButtonMode="always" returnKeyType="send" secureTextEntry={true} onChangeText={(rePsw) => this.setState({rePsw})}/>
+            </View>
+        )
         return (
             <Image source={require('./../../assets/register-bg.jpg')} style={style.container}>
                 <View style={style.innerContainer}>
-                    <Text style={style.warning}>{this.state.warning}</Text>
                     <View style={style.inputContainer}>
                         <Icon style={style.input.icon} name="mobile-phone" size={30}></Icon>
                         <TextInput style={style.input} placeholder={'请输入手机号码'} clearButtonMode="always" returnKeyType="next" keyboardType="numeric" onChangeText={(phone) => this.setState({phone})}/>
@@ -68,11 +100,9 @@ class Register extends Component {
                         <Icon style={style.input.icon} name="lock" size={20}></Icon>
                         <TextInput style={style.input} placeholder={'请输入密码'} clearButtonMode="always" returnKeyType="next" secureTextEntry={true} onChangeText={(psw) => this.setState({psw})}/>
                     </View>
-                    <View style={style.inputContainer}>
-                        <Icon style={style.input.icon} name="lock" size={20}></Icon>
-                        <TextInput style={style.input} placeholder={'再次输入密码'} clearButtonMode="always" returnKeyType="send" secureTextEntry={true} onChangeText={(rePsw) => this.setState({rePsw})}/>
-                    </View>
-                    <Button title="注册" onPress={this.submit}/>
+                    {this.state.register&&reInput}
+                    <Button title={this.state.btnText} disabled={this.state.btnDisabled} onPress={this.submit}/>
+                    <Button title={this.state.register?'去登录':'去注册'} onPress={() => this.setState({register: !this.state.register, btnText: this.state.register?'登录':'注册'})}/>
                 </View>
             </Image>
         )
@@ -128,10 +158,9 @@ const style = StyleSheet.create({
     }
 })
 
-
-
 // connect
 function select(state) {
+    console.log(state)
     return {
         userMsg: state.userMsg
     }

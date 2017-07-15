@@ -103,6 +103,7 @@ router.post('/registerByPhone', function (req, res, next) {
 * 3. 错误的电话号码或者密码： code: 'E302', msg
 * */
 router.post('/loginByPhone', function (req, res, next) {
+    console.log(req.body)
     let phone = req.body.phone,
         psw = req.body.psw
     if ( phone === undefined) {

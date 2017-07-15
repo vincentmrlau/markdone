@@ -1,0 +1,10 @@
+/*
+* format:
+* USER_LOGIN_DOING
+* */
+
+export const USER_LOGIN_BEFORE = 'USER_LOGIN_BEFORE'
+export const USER_LOGIN_DOING = 'USER_LOGIN_DOING'
+export const USER_LOGIN_AFTER = 'USER_LOGIN_AFTER'
+export const USER_LOGIN_FAIL = 'USER_LOGIN_FAIL'
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'

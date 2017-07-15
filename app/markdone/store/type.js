@@ -1,8 +1,0 @@
-/*
-* format:
-* USER_LOGIN_DOING
-* */
-
-export const USER_LOGIN_BEFORE = 'USER_LOGIN_BEFORE'
-export const USER_LOGIN_DOING = 'USER_LOGIN_DOING'
-export const USER_LOGIN_AFTER = 'USER_LOGIN_AFTER'
