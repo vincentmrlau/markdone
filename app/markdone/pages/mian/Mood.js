@@ -13,15 +13,22 @@ import {
 // redux
 import {connect} from 'react-redux'
 
+// todo test
+import {SOCKET_CONNECT} from './../../api/login'
+
 class Mood extends Component {
     constructor(props){
         super(props)
     }
     static navigationOptions = {
-        title: 'Mood'
+        title: 'Mood',
+        headerLeft: null
     }
     componentWillMount(){
         console.log('componentWillMount')
+    }
+    render() {
+        SOCKET_CONNECT()
         // 检查token
         const { token } = this.props.userMsg,
             {navigate} = this.props.navigation
@@ -29,8 +36,7 @@ class Mood extends Component {
             // 跳转到登录
             navigate('Register')
         }
-    }
-    render() {
+
         const {userMsg, navigation} = this.props
         return (
             <View>

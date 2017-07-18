@@ -43,3 +43,5 @@
 7. prop-types
 8. redux-persist 缓存
 9. redux-thunk
+10. react-native-push-notifications 处理推送
+11. JPush-react-native

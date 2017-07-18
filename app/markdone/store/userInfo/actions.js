@@ -2,8 +2,15 @@
 * user info actions
 * */
 import * as TYPES from './../../type.js'
-import {REGISTER_BY_PHONE } from './../../api/login'
+import {REGISTER_BY_PHONE, LOGIN_BY_PHONE } from './../../api/login'
 
+const LOGIN_BEFORE = function () {
+    return {
+        type: TYPES.USER_LOGIN_BEFORE,
+        loginStatus: TYPES.USER_LOGIN_BEFORE,
+        alertMsg: ''
+    }
+}
 
 // login doing
 const LOGIN_DOING = function () {
@@ -36,21 +43,45 @@ const AFTER_LOGIN = function () {
 }
 
 // register action creator
-export function registerByPhone(phone, psw) {
+function registerByPhone(phone, psw) {
     return ( dispatch ) => {
         dispatch(LOGIN_DOING())
-        return REGISTER_BY_PHONE(phone, psw).then(function (data) {
-            console.log(data)
-            if (data.error) {
-                dispatch(LOGIN_FAIL('网络错误'))
-            } else {
-                if (data.code === 'S200') {
-                    dispatch(LOGIN_SUCCESS(data.data))
+        return REGISTER_BY_PHONE(phone, psw)
+            .then(function (data) {
+                console.log(data)
+                if (data.error) {
+                    dispatch(LOGIN_FAIL('网络错误'))
                 } else {
-                    dispatch(LOGIN_FAIL(data.msg))
-                }
+                    if (data.code === 'S200') {
+                       dispatch(LOGIN_SUCCESS(data.data))
+                   } else {
+                       dispatch(LOGIN_FAIL(data.msg))
+                    }
             }
         })
     }
 }
 
+function loginByPhone(phone, psw) {
+    return (dispatch) => {
+        dispatch(LOGIN_DOING())
+        return LOGIN_BY_PHONE(phone, psw)
+            .then(function (data) {
+                if (data.error) {
+                    dispatch(LOGIN_FAIL('网络错误'))
+                } else {
+                    if (data.code === 'S200') {
+                        dispatch(LOGIN_SUCCESS(data.data))
+                    } else {
+                        dispatch(LOGIN_FAIL(data.msg))
+                    }
+                }
+            })
+    }
+}
+
+export {
+    registerByPhone,
+    LOGIN_BEFORE,
+    loginByPhone
+}

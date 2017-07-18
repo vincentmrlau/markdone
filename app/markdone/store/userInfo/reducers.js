@@ -14,8 +14,14 @@ const initialState = {
 }
 
 export function userMsg (state = initialState, action) {
-    console.log('a',action.type)
     switch (action.type){
+        // 登录前
+        case TYPES.USER_LOGIN_BEFORE:
+            return {
+                ...state,
+                loginStatus: action.loginStatus,
+                alertMsg: action.alertMsg
+            }
         // 登录中
         case TYPES.USER_LOGIN_DOING:
             return{
@@ -33,12 +39,10 @@ export function userMsg (state = initialState, action) {
             break
         // 登录失败
         case TYPES.USER_LOGIN_FAIL:
-            console.log('USER_LOGIN_FAIL2',action.loginStatus)
             return {
                 ...state,
                 loginStatus: action.loginStatus,
                 alertMsg: action.alertMsg,
-                nikename:'hh'
             }
             break
         // 登陆后

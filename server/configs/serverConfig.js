@@ -22,7 +22,8 @@ let serverConfig = {
     },
     ports: {
         port: 3002,
-        ssl: 3003
+        ssl: 3003,
+        socket: 3004
     },
     sslPsw: 'liu5998577'
 }

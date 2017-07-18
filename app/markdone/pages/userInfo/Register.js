@@ -18,7 +18,7 @@ import {connect} from 'react-redux'
 // icon
 import Icon from 'react-native-vector-icons/FontAwesome'
 // action
-import { registerByPhone} from './../../store/userInfo/actions'
+import { registerByPhone, LOGIN_BEFORE, loginByPhone} from './../../store/userInfo/actions'
 // types
 import * as TYPES from './../../type'
 
@@ -31,8 +31,6 @@ class Register extends Component {
             psw: '',
             rePsw: '',
             warning: '',
-            btnText: '登录',
-            btnDisabled: false,
             register: false
         }
         // binding this
@@ -66,23 +64,27 @@ class Register extends Component {
                 }
             } else {
                 // 登录
+                this.props.dispatch(loginByPhone(this.state.phone, this.state.psw))
             }
-
         }
     }
-    componentWillReceiveProps () {
-        console.log('props componentWillReceiveProps',this.props.userMsg)
-        let btnText = (this.props.userMsg.loginStatus === TYPES.USER_LOGIN_DOING)?'正在提交...':(this.state.register?'注册':'登录')
-        this.setState({
-            btnDisabled: (this.props.userMsg.loginStatus === TYPES.USER_LOGIN_DOING),
-            btnText: btnText
-        })
-    }
-    componentWillUpdate(){
-        console.log('props componentWillUpdate', this.props.userMsg )
+    componentDidUpdate() {
+        if (this.props.userMsg.loginStatus === TYPES.USER_LOGIN_FAIL) {
+            // 登录失败的时候，转换成登录前的状态
+            this.props.dispatch(LOGIN_BEFORE())
+        } else if( this.props.userMsg.loginStatus === TYPES.LOGIN_SUCCESS) {
+            // 登陆成功，跳转到主页
+            this.props.navigation.navigate('Mood')
+            // 连接socket
+        }
     }
     render() {
-        console.log('props when render',this.props.userMsg)
+        let btnText = (this.props.userMsg.loginStatus === TYPES.USER_LOGIN_DOING)?'正在提交...':(this.state.register?'注册':'登录')
+        let btnDisabled = (this.props.userMsg.loginStatus === TYPES.USER_LOGIN_DOING)
+        // 如果登录失败，设置状态回到登录前，弹框提醒登录失败
+        if (this.props.userMsg.loginStatus === TYPES.USER_LOGIN_FAIL) {
+            Alert.alert('登录失败', this.props.userMsg.alertMsg)
+        }
         const reInput = (
             <View style={style.inputContainer}>
                 <Icon style={style.input.icon} name="lock" size={20}></Icon>
@@ -101,7 +103,7 @@ class Register extends Component {
                         <TextInput style={style.input} placeholder={'请输入密码'} clearButtonMode="always" returnKeyType="next" secureTextEntry={true} onChangeText={(psw) => this.setState({psw})}/>
                     </View>
                     {this.state.register&&reInput}
-                    <Button title={this.state.btnText} disabled={this.state.btnDisabled} onPress={this.submit}/>
+                    <Button title={btnText} disabled={btnDisabled} onPress={this.submit}/>
                     <Button title={this.state.register?'去登录':'去注册'} onPress={() => this.setState({register: !this.state.register, btnText: this.state.register?'登录':'注册'})}/>
                 </View>
             </Image>
