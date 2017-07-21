@@ -74,7 +74,7 @@ class Register extends Component {
             this.props.dispatch(LOGIN_BEFORE())
         } else if( this.props.userMsg.loginStatus === TYPES.LOGIN_SUCCESS) {
             // 登陆成功，跳转到主页
-            this.props.navigation.navigate('Mood')
+            // this.props.navigation.navigate('Mood')
             // 连接socket
         }
     }

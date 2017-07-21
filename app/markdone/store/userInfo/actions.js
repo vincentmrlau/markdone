@@ -2,7 +2,7 @@
 * user info actions
 * */
 import * as TYPES from './../../type.js'
-import {REGISTER_BY_PHONE, LOGIN_BY_PHONE } from './../../api/login'
+import {REGISTER_BY_PHONE, LOGIN_BY_PHONE, SOCKET_CONNECT } from './../../api/login'
 
 const LOGIN_BEFORE = function () {
     return {
@@ -57,16 +57,22 @@ function registerByPhone(phone, psw) {
                    } else {
                        dispatch(LOGIN_FAIL(data.msg))
                     }
-            }
-        })
+                }
+            })
+            .catch(function (e) {
+                console.log(e)
+                dispatch(LOGIN_FAIL('' + e))
+            })
     }
 }
 
 function loginByPhone(phone, psw) {
     return (dispatch) => {
         dispatch(LOGIN_DOING())
+        SOCKET_CONNECT()
         return LOGIN_BY_PHONE(phone, psw)
             .then(function (data) {
+                console.log(data)
                 if (data.error) {
                     dispatch(LOGIN_FAIL('网络错误'))
                 } else {
@@ -76,6 +82,10 @@ function loginByPhone(phone, psw) {
                         dispatch(LOGIN_FAIL(data.msg))
                     }
                 }
+            })
+            .catch(function (e) {
+                console.log(e)
+                dispatch(LOGIN_FAIL('' + e))
             })
     }
 }

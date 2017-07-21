@@ -25,7 +25,7 @@ const StackNav = StackNavigator({
 })
 
 // navigation 的初始状态
-const navInitialState = StackNav.router.getStateForAction(Main.router.getActionForPathAndParams('Mood'))
+const navInitialState = StackNav.router.getStateForAction(StackNav.router.getActionForPathAndParams('Register'))
 const navReducer = ( state = navInitialState, action) => {
     let nextState = StackNav.router.getStateForAction(action, state)
     return nextState || state
