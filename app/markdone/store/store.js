@@ -7,15 +7,22 @@ import thunkMiddleware from 'redux-thunk'
 import { persistStore, autoRehydrate } from 'redux-persist'
 import { AsyncStorage } from 'react-native'
 
+// import reducer
 import { userMsg } from './userInfo/reducers'
+import {socket} from './main-socket/reducer'
 
 /*
 * all reducer except navigation reducer
 * */
 
 let allReducer = {
-    userMsg: userMsg
+    userMsg: userMsg,
+    socket: socket
 }
+
+let defaultBlackList = [
+    'socket'
+]
 
 /*
 * 生成store的helper函数
@@ -36,7 +43,7 @@ const configStore = function ( reducers = {}) {
         )
         const persistOptions = {
             storage: AsyncStorage,
-            blacklist: _options.blacklist
+            blacklist: defaultBlackList.concat(_options.blacklist)
         }
         persistStore(store, persistOptions)
         return store

@@ -87,8 +87,7 @@ let io = sockteIo(httpServer)
 let b = 1
 io.on('connection', function (socket) {
     console.log(socket.id)
-    b += 1
-    socket.join('hhaa' + b)
+    console.log(socket.handshake.query)
     socket.emit('news', { hello: 'world' });
     socket.on('my other event', function (data) {
         console.log('my other event',data,socket.id);

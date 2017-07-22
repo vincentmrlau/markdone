@@ -2,11 +2,10 @@
  * Created by liuyiman on 2017/7/13.
  */
 
-import {REGISTER_PHONE_URL, LOGIN_PHONE_URL, SOCKET_URL} from './config'
-import {P_WITHOUT_TOKEN_OPT, SOCKET_IO} from './middleware'
+import {REGISTER_PHONE_URL, LOGIN_PHONE_URL} from './config'
+import {P_WITHOUT_TOKEN_OPT} from './middleware'
 import {OBJ_PARSER_URLCODE} from './utils'
 
-import SOCKET_IO_CLIENT from 'socket.io-client'
 
 const REGISTER_BY_PHONE = function (phone, psw) {
     return fetch(REGISTER_PHONE_URL, {
@@ -38,12 +37,4 @@ const LOGIN_BY_PHONE = function (phone, psw) {
         })
 }
 
-const SOCKET_CONNECT = function () {
-    let SOCKET_IO = SOCKET_IO_CLIENT(SOCKET_URL)
-    SOCKET_IO.on('news', function (data) {
-        console.log(data)
-    })
-    SOCKET_IO.emit('my other event', { my: 'data' })
-}
-
-export {REGISTER_BY_PHONE, LOGIN_BY_PHONE, SOCKET_CONNECT}
+export {REGISTER_BY_PHONE, LOGIN_BY_PHONE}

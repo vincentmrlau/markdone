@@ -2,9 +2,9 @@
  * Created by liuyiman on 2017/7/13.
  */
 
-// const HOST_NAME = 'http://127.0.0.1:3002'
+const HOST_NAME = 'http://127.0.0.1:3002'
 
-const HOST_NAME = 'http://192.166.1.79:3002'
+// const HOST_NAME = 'http://192.166.1.79:3002'
 
 // socket连接地址
 const SOCKET_URL = HOST_NAME

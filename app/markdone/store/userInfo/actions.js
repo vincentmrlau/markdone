@@ -2,13 +2,14 @@
 * user info actions
 * */
 import * as TYPES from './../../type.js'
-import {REGISTER_BY_PHONE, LOGIN_BY_PHONE, SOCKET_CONNECT } from './../../api/login'
+import {REGISTER_BY_PHONE, LOGIN_BY_PHONE } from '../api/login'
+import {SOCKET_CONNECT} from './../main-socket/action'
+
+import initializeState from './initializeState'
 
 const LOGIN_BEFORE = function () {
     return {
-        type: TYPES.USER_LOGIN_BEFORE,
-        loginStatus: TYPES.USER_LOGIN_BEFORE,
-        alertMsg: ''
+        initializeState
     }
 }
 
@@ -69,7 +70,6 @@ function registerByPhone(phone, psw) {
 function loginByPhone(phone, psw) {
     return (dispatch) => {
         dispatch(LOGIN_DOING())
-        SOCKET_CONNECT()
         return LOGIN_BY_PHONE(phone, psw)
             .then(function (data) {
                 console.log(data)
@@ -78,6 +78,8 @@ function loginByPhone(phone, psw) {
                 } else {
                     if (data.code === 'S200') {
                         dispatch(LOGIN_SUCCESS(data.data))
+                        // 登录成功就连接
+                        SOCKET_CONNECT()
                     } else {
                         dispatch(LOGIN_FAIL(data.msg))
                     }

@@ -4,16 +4,9 @@
 
 import * as TYPES from './../../type.js'
 
-const initialState = {
-    token: undefined,
-    headshot: undefined,
-    email: undefined,
-    nikename: undefined,
-    loginStatus: TYPES.USER_LOGIN_BEFORE,
-    alertMsg: ''
-}
+import initializeState from './initializeState'
 
-export function userMsg (state = initialState, action) {
+export function userMsg (state = initializeState, action) {
     switch (action.type){
         // 登录前
         case TYPES.USER_LOGIN_BEFORE:

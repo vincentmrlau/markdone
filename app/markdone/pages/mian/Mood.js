@@ -14,7 +14,7 @@ import {
 import {connect} from 'react-redux'
 
 // todo test
-import {SOCKET_CONNECT} from './../../api/login'
+import {SOCKET_CONNECT} from '../../store/api/login'
 
 class Mood extends Component {
     constructor(props){

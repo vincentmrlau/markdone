@@ -17,7 +17,7 @@
 2.	jwt `https://www.npmjs.com/package/jwt-simple` `处理登录状态` 
 3.	crypto `密码加密储存` `http://nodejs.cn/api/crypto.html#crypto_crypto_createhmac_algorithm_key` 
 4. socket: socket.io
-5. 使用 x-www-form-urlecoded 传递数据
+5. ~~使用 x-www-form-urlecoded 传递数据~~
 6. 日志系统： log4js
 7. 签名规则： id+过期时间
 8. 用户通过socket与后端交互
@@ -26,6 +26,7 @@
 1. 记录每一个连接自动生成的id（每一个连接都会自动join一个room），记录在user_info的表上
 2. 每次发送信息都要查表（找到对应的socket_room_id）
 3. 用socket.to(socket_room_id)来选择对应的用户连接的room
+4. 客户端连接的时候需要在
 
 #### socket 实现方案（2）每次连接加入一个用userid命名的room
 
@@ -36,7 +37,7 @@
 
 ####	微信小程序
 1.	完整功能
-2. 暂时不出
+2. ios版本之后
 
 ####	web版本
 1.	vue及其生态（vuex\vue-router\vue-resource等）
