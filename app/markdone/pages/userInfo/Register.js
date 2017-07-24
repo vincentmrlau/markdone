@@ -9,9 +9,14 @@ import {
     StyleSheet,
     TextInput,
     Image,
-    Button,
+    // Button,
     Alert
 } from 'react-native'
+
+import {
+    Button,
+    FormInput,
+} from 'react-native-elements'
 
 // redux
 import {connect} from 'react-redux'
@@ -74,8 +79,7 @@ class Register extends Component {
             this.props.dispatch(LOGIN_BEFORE())
         } else if( this.props.userMsg.loginStatus === TYPES.LOGIN_SUCCESS) {
             // 登陆成功，跳转到主页
-            // this.props.navigation.navigate('Mood')
-            // 连接socket
+            this.props.navigation.navigate('Mood')
         }
     }
     render() {
@@ -86,27 +90,22 @@ class Register extends Component {
             Alert.alert('登录失败', this.props.userMsg.alertMsg)
         }
         const reInput = (
-            <View style={style.inputContainer}>
-                <Icon style={style.input.icon} name="lock" size={20}></Icon>
-                <TextInput style={style.input} placeholder={'再次输入密码'} clearButtonMode="always" returnKeyType="send" secureTextEntry={true} onChangeText={(rePsw) => this.setState({rePsw})}/>
-            </View>
+            <FormInput placeholder={'再次输入密码'} clearButtonMode="always" returnKeyType="send" secureTextEntry={true} onChangeText={(rePsw) => this.setState({rePsw})}/>
         )
         return (
-            <Image source={require('./../../assets/register-bg.jpg')} style={style.container}>
-                <View style={style.innerContainer}>
-                    <View style={style.inputContainer}>
-                        <Icon style={style.input.icon} name="mobile-phone" size={30}></Icon>
-                        <TextInput style={style.input} placeholder={'请输入手机号码'} clearButtonMode="always" returnKeyType="next" keyboardType="numeric" onChangeText={(phone) => this.setState({phone})}/>
-                    </View>
-                    <View style={style.inputContainer}>
-                        <Icon style={style.input.icon} name="lock" size={20}></Icon>
-                        <TextInput style={style.input} placeholder={'请输入密码'} clearButtonMode="always" returnKeyType="next" secureTextEntry={true} onChangeText={(psw) => this.setState({psw})}/>
-                    </View>
+            <View style={style.container}>
+                <Image source={require('./../../assets/header.jpg')} style={style.header}>
+                </Image>
+                <View style={style.formContainer}>
+                    <FormInput placeholder={'请输入手机号码'} clearButtonMode="always" returnKeyType="next" keyboardType="numeric" onChangeText={(phone) => this.setState({phone})}/>
+                    <FormInput placeholder={'请输入密码'} clearButtonMode="always" returnKeyType="next" secureTextEntry={true} onChangeText={(psw) => this.setState({psw})}/>
                     {this.state.register&&reInput}
-                    <Button title={btnText} disabled={btnDisabled} onPress={this.submit}/>
-                    <Button title={this.state.register?'去登录':'去注册'} onPress={() => this.setState({register: !this.state.register, btnText: this.state.register?'登录':'注册'})}/>
+                    <Button style={style.submitBtn} title={btnText} disabled={btnDisabled} onPress={this.submit}/>
                 </View>
-            </Image>
+                <View style={style.footer}>
+                    <Text style={style.link} onPress={() => this.setState({register: !this.state.register, btnText: this.state.register?'登录':'注册'})}>{this.state.register?'已有账号？去登录吧':'还没有账号？注册一个吧'}</Text>
+                </View>
+            </View>
         )
     }
 }
@@ -114,49 +113,24 @@ class Register extends Component {
 const style = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        // backgroundColor: 'white',
-        padding: 40,
-        resizeMode: Image.resizeMode.cover,
-        width:window.width
+        backgroundColor: '#ffffff'
     },
-    innerContainer: {
-        flex: 1,
-        justifyContent: 'center'
+    header: {
+        width:window.width,
+        height: 250
     },
-    title:{
-        color: 'white',
-        fontSize: 25,
-        textAlign:'center',
-        shadowColor: 'black',
-        shadowRadius: 40,
-        backgroundColor:'rgba(0,0,0,0.2)',
-        margin:30
+    formContainer: {
+        paddingVertical: 20
     },
-    warning: {
-        backgroundColor:'rgba(0,0,0,0)',
-        color: 'red'
+    submitBtn: {
+        marginVertical:10
     },
-    inputContainer: {
-        backgroundColor: 'rgba(255,255,255,0.4)',
-        flex: -1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingHorizontal: 10,
-        paddingVertical:5,
-        borderRadius:4,
-        marginVertical: 5,
+    footer: {
+        paddingHorizontal: 20
     },
-    inputIcon: {
-        backgroundColor: 'rgba(0,0,0,0)',
-    },
-    input:{
-        fontSize: 20,
-        height:30,
-        borderRadius:3,
-        paddingLeft:5,
-        flex:1
+    link: {
+        textDecorationLine: 'underline',
+        textAlign: 'right'
     }
 })
 

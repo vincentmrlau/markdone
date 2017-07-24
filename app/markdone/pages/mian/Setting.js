@@ -7,24 +7,51 @@
 import React, {Component} from 'react'
 import {
     View,
-    Text
+    StyleSheet
 } from 'react-native'
+
+import {
+    Icon,
+    List,
+    ListItem
+} from 'react-native-elements'
 
 class Setting extends Component {
     constructor(props){
         super(props)
     }
     static navigationOptions = {
-        title: 'Setting'
+        title: '更多',
+        tabBarLabel: '更多',
+        tabBarIcon: ({tintColor}) => (
+            <Icon name="settings"
+                  color={tintColor}
+            />
+        )
     }
 
     render() {
         return (
-            <View>
-                <Text>s</Text>
+            <View style={style.container}>
+                <List>
+                    <ListItem
+                        title={'个人资料'}
+                        leftIcon={
+                            {
+                                name: 'account-circle'
+                            }
+                        }
+                    />
+                </List>
             </View>
         )
     }
 }
+
+let style = StyleSheet.create({
+    container: {
+        flex: 1,
+    }
+})
 
 export default Setting

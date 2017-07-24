@@ -48,7 +48,7 @@
 2. weex,cordova,原生开发。
 3. react-navigation
 4. redux + redux-persist + redux-thunk 
-5. 备选（mobx + react-mobx）
+5. ~~mobx + react-mobx）~~
 6. react-native-vector-icons 
 7. prop-types
 8. redux-persist 缓存

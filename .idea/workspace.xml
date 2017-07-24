@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28dbd9fc-4c16-4408-bfd9-9e9578b5fd07" name="默认" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/markdone/assets/header.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/markdone/store/api/socket-init.js" afterPath="$PROJECT_DIR$/app/markdone/store/api/socket-init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/markdone/store/main-socket/action.js" afterPath="$PROJECT_DIR$/app/markdone/store/main-socket/action.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/markdone/package.json" afterPath="$PROJECT_DIR$/app/markdone/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/markdone/pages/Navigations.js" afterPath="$PROJECT_DIR$/app/markdone/pages/Navigations.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/markdone/pages/mian/Mood.js" afterPath="$PROJECT_DIR$/app/markdone/pages/mian/Mood.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/markdone/pages/mian/Setting.js" afterPath="$PROJECT_DIR$/app/markdone/pages/mian/Setting.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/markdone/pages/mian/index.js" afterPath="$PROJECT_DIR$/app/markdone/pages/mian/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/markdone/pages/userInfo/Register.js" afterPath="$PROJECT_DIR$/app/markdone/pages/userInfo/Register.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/markdone/store/userInfo/actions.js" afterPath="$PROJECT_DIR$/app/markdone/store/userInfo/actions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/app.js" afterPath="$PROJECT_DIR$/server/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/markdone/store/userInfo/reducers.js" afterPath="$PROJECT_DIR$/app/markdone/store/userInfo/reducers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/markdone/type.js" afterPath="$PROJECT_DIR$/app/markdone/type.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,8 +34,8 @@
       <file leaf-file-name="actions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/markdone/store/userInfo/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="81" column="54" lean-forward="false" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="54" />
+            <state relative-caret-position="135">
+              <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
               <folding>
                 <element signature="e#28#68#0" expanded="true" />
               </folding>
@@ -39,11 +46,21 @@
       <file leaf-file-name="action.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/markdone/store/main-socket/action.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+            <state relative-caret-position="255">
+              <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="type.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/markdone/type.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,21 +69,8 @@
         <entry file="file://$PROJECT_DIR$/app/markdone/store/main-socket/reducer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+              <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/markdone/store/store.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-              <folding>
-                <element signature="e#17#94#0" expanded="true" />
-                <element signature="e#260#305#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -74,8 +78,8 @@
       <file leaf-file-name="reducers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/markdone/store/userInfo/reducers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-71">
-              <caret line="6" column="47" lean-forward="false" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+            <state relative-caret-position="240">
+              <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#45#85#0" expanded="true" />
@@ -84,60 +88,60 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/markdone/store/api/utils.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="socket-init.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/markdone/store/api/socket-init.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#91#135#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="85" column="29" lean-forward="false" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Register.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/markdone/pages/userInfo/Register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="77" column="23" lean-forward="true" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
+            <state relative-caret-position="-449">
+              <caret line="81" column="50" lean-forward="false" selection-start-line="81" selection-start-column="50" selection-end-line="81" selection-end-column="50" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#45#83#0" expanded="true" />
-                <element signature="e#4240#5314#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="initializeState.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/markdone/store/userInfo/initializeState.js">
+      <file leaf-file-name="Navigations.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/markdone/pages/Navigations.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+            <state relative-caret-position="268">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/markdone/pages/mian/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#123#148#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Setting.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/markdone/pages/mian/Setting.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="431">
+              <caret line="40" column="53" lean-forward="false" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+              <folding>
+                <element signature="e#66#104#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mood.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/markdone/pages/mian/Mood.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="19" column="52" lean-forward="true" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+              <folding>
+                <element signature="e#71#109#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,11 +191,9 @@
         <option value="$PROJECT_DIR$/server/models/userInfo.js" />
         <option value="$PROJECT_DIR$/server/utils/userInfo.js" />
         <option value="$PROJECT_DIR$/server/middleware/checktoken.js" />
-        <option value="$PROJECT_DIR$/app/markdone/pages/mian/Setting.js" />
         <option value="$PROJECT_DIR$/app/markdone/redux/userInfo/actions.js" />
         <option value="$PROJECT_DIR$/app/markdone/redux/userInfo/reducers.js" />
         <option value="$PROJECT_DIR$/app/markdone/redux/store.js" />
-        <option value="$PROJECT_DIR$/app/markdone/pages/mian/index.js" />
         <option value="$PROJECT_DIR$/app/markdone/index.ios.js" />
         <option value="$PROJECT_DIR$/app/markdone/store/type.js" />
         <option value="$PROJECT_DIR$/app/markdone/pages/userInfo/Login.js" />
@@ -201,9 +203,6 @@
         <option value="$PROJECT_DIR$/app/markdone/package.json" />
         <option value="$PROJECT_DIR$/server/configs/serverConfig.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/app/markdone/pages/mian/Mood.js" />
-        <option value="$PROJECT_DIR$/app/markdone/pages/Navigations.js" />
-        <option value="$PROJECT_DIR$/app/markdone/pages/userInfo/Register.js" />
         <option value="$PROJECT_DIR$/server/routers/userInfo.js" />
         <option value="$PROJECT_DIR$/app/markdone/api/config.js" />
         <option value="$PROJECT_DIR$/app/markdone/api/middleware.js" />
@@ -211,16 +210,21 @@
         <option value="$PROJECT_DIR$/app/markdone/api/socket-init.js" />
         <option value="$PROJECT_DIR$/app/markdone/store/store.js" />
         <option value="$PROJECT_DIR$/app/markdone/store/userInfo/initializeState.js" />
-        <option value="$PROJECT_DIR$/app/markdone/store/userInfo/reducers.js" />
         <option value="$PROJECT_DIR$/app/markdone/store/main-socket/initializeState.js" />
         <option value="$PROJECT_DIR$/app/markdone/store/main-socket/reducer.js" />
-        <option value="$PROJECT_DIR$/app/markdone/type.js" />
         <option value="$PROJECT_DIR$/app/markdone/store/api/login.js" />
         <option value="$PROJECT_DIR$/app/markdone/store/api/config.js" />
         <option value="$PROJECT_DIR$/app/markdone/store/api/socket-init.js" />
         <option value="$PROJECT_DIR$/app/markdone/store/main-socket/action.js" />
-        <option value="$PROJECT_DIR$/app/markdone/store/userInfo/actions.js" />
         <option value="$PROJECT_DIR$/server/app.js" />
+        <option value="$PROJECT_DIR$/app/markdone/store/userInfo/actions.js" />
+        <option value="$PROJECT_DIR$/app/markdone/store/userInfo/reducers.js" />
+        <option value="$PROJECT_DIR$/app/markdone/pages/userInfo/Register.js" />
+        <option value="$PROJECT_DIR$/app/markdone/pages/Navigations.js" />
+        <option value="$PROJECT_DIR$/app/markdone/pages/mian/index.js" />
+        <option value="$PROJECT_DIR$/app/markdone/pages/mian/Mood.js" />
+        <option value="$PROJECT_DIR$/app/markdone/type.js" />
+        <option value="$PROJECT_DIR$/app/markdone/pages/mian/Setting.js" />
       </list>
     </option>
   </component>
@@ -617,16 +621,16 @@
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/markdone/assets" />
+      <recent name="$PROJECT_DIR$/server/configs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/markdone/store" />
       <recent name="$PROJECT_DIR$/app/markdone" />
       <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/app/markdone/pages/userInfo" />
       <recent name="$PROJECT_DIR$/app/markdone/redux" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/markdone/assets" />
-      <recent name="$PROJECT_DIR$/server/configs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -745,12 +749,12 @@
       <workItem from="1499999845589" duration="17508000" />
       <workItem from="1500254788257" duration="13450000" />
       <workItem from="1500343182103" duration="29941000" />
-      <workItem from="1500861371230" duration="2461000" />
+      <workItem from="1500861371230" duration="16066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220148000" />
+    <option name="totallyTimeSpent" value="233753000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -814,20 +818,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wxclient/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/models/models.js" />
     <entry file="file://$PROJECT_DIR$/server/configs/sequelizeConfig.js" />
     <entry file="file://$PROJECT_DIR$/server/modelInit.js">
@@ -939,20 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/markdone/pages/mian/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/markdone/pages/mian/Setting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/log/logger.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1004,32 +980,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/markdone/pages/mian/Mood.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-          <folding>
-            <marker date="1500629643000" expanded="true" signature="303:922" ph="{...}" />
-            <marker date="1500629643000" expanded="true" signature="530:920" ph="{...}" />
-            <marker date="1500629643000" expanded="true" signature="702:767" ph="{...}" />
-            <marker date="1500629643000" expanded="true" signature="847:904" ph="&lt;View/&gt;" />
-            <marker date="1500629643000" expanded="true" signature="946:997" ph="{...}" />
-            <marker date="1500629643000" expanded="true" signature="958:995" ph="{&quot;userMsg&quot;: state.userMsg...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/markdone/pages/userInfo/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/routers/userInfo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="130" column="32" lean-forward="true" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,13 +1000,6 @@
         <state relative-caret-position="390">
           <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/markdone/pages/Navigations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="27" column="109" lean-forward="false" selection-start-line="27" selection-start-column="109" selection-end-line="27" selection-end-column="109" />
         </state>
       </provider>
     </entry>
@@ -1076,16 +1024,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/markdone/type.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/markdone/store/api/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1102,32 +1040,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/markdone/store/userInfo/initializeState.js">
+    <entry file="file://$PROJECT_DIR$/app/markdone/store/api/socket-init.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        <state relative-caret-position="225">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#91#135#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/markdone/pages/userInfo/Register.js">
+    <entry file="file://$PROJECT_DIR$/server/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="77" column="23" lean-forward="true" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
+        <state relative-caret-position="214">
+          <caret line="85" column="29" lean-forward="false" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/markdone/node_modules/react-native/Libraries/react-native/react-native-implementation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="60" column="6" lean-forward="false" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/markdone/assets/header.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/markdone/pages/userInfo/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/markdone/store/userInfo/initializeState.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="9" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#45#83#0" expanded="true" />
-            <element signature="e#4240#5314#0" expanded="false" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/markdone/store/store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        <state relative-caret-position="255">
+          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="18" />
           <folding>
             <element signature="e#17#94#0" expanded="true" />
             <element signature="e#260#305#0" expanded="true" />
@@ -1138,15 +1104,34 @@
     <entry file="file://$PROJECT_DIR$/app/markdone/store/main-socket/reducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/markdone/pages/Navigations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/markdone/pages/userInfo/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-449">
+          <caret line="81" column="50" lean-forward="false" selection-start-line="81" selection-start-column="50" selection-end-line="81" selection-end-column="50" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#45#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/markdone/store/userInfo/reducers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="6" column="47" lean-forward="false" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+        <state relative-caret-position="240">
+          <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#45#85#0" expanded="true" />
@@ -1156,8 +1141,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/markdone/store/main-socket/action.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        <state relative-caret-position="255">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -1166,30 +1151,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/markdone/store/userInfo/actions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="81" column="54" lean-forward="false" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="54" />
+        <state relative-caret-position="135">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding>
             <element signature="e#28#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/markdone/store/api/socket-init.js">
+    <entry file="file://$PROJECT_DIR$/app/markdone/type.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/markdone/pages/mian/Mood.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <caret line="19" column="52" lean-forward="true" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#91#135#0" expanded="true" />
+            <element signature="e#71#109#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app.js">
+    <entry file="file://$PROJECT_DIR$/app/markdone/pages/mian/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="85" column="29" lean-forward="false" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="300">
+          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="e#123#148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/markdone/pages/mian/Setting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="40" column="53" lean-forward="false" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+          <folding>
+            <element signature="e#66#104#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

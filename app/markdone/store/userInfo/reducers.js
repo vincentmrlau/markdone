@@ -12,6 +12,7 @@ export function userMsg (state = initializeState, action) {
         case TYPES.USER_LOGIN_BEFORE:
             return {
                 ...state,
+                token: action.token,
                 loginStatus: action.loginStatus,
                 alertMsg: action.alertMsg
             }

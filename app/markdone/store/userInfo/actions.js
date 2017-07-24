@@ -9,7 +9,8 @@ import initializeState from './initializeState'
 
 const LOGIN_BEFORE = function () {
     return {
-        initializeState
+        type: TYPES.USER_LOGIN_BEFORE,
+        ...initializeState
     }
 }
 
@@ -78,8 +79,6 @@ function loginByPhone(phone, psw) {
                 } else {
                     if (data.code === 'S200') {
                         dispatch(LOGIN_SUCCESS(data.data))
-                        // 登录成功就连接
-                        SOCKET_CONNECT(data.data.token)
                     } else {
                         dispatch(LOGIN_FAIL(data.msg))
                     }

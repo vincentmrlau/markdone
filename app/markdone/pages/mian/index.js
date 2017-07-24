@@ -9,6 +9,16 @@ import { TabNavigator } from 'react-navigation'
 // 引入页面
 import Mood from './Mood'
 import Setting from './Setting'
+import React from 'react'
+import {
+    StyleSheet
+} from 'react-native'
+
+let style = StyleSheet.create({
+    header: {
+        backgroundColor: 'white',
+    }
+})
 
 const Main = TabNavigator({
     Mood: {
@@ -16,6 +26,16 @@ const Main = TabNavigator({
     },
     Setting: {
         screen: Setting
+    }
+}, {
+    navigationOptions: {
+        headerLeft: null,
+        headerStyle: style.header,
+    },
+    tabBarOptions: {
+        style: {
+            backgroundColor: 'white'
+        }
     }
 })
 

@@ -22,6 +22,8 @@ const StackNav = StackNavigator({
     Register: {
         screen: Register
     }
+}, {
+
 })
 
 // navigation 的初始状态

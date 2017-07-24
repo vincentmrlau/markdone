@@ -9,6 +9,9 @@ import {
     View,
     Text
 } from 'react-native'
+import {
+    Icon
+} from 'react-native-elements'
 
 // redux
 import {connect} from 'react-redux'
@@ -21,14 +24,17 @@ class Mood extends Component {
         super(props)
     }
     static navigationOptions = {
-        title: 'Mood',
-        headerLeft: null
+        title: '报表',
+        headerLeft: null,
+        tabBarLabel:'报表',
+        tabBarIcon: ({tintColor}) => (
+            <Icon name="poll"
+                  color={tintColor}
+            />
+        )
     }
     componentWillMount(){
         console.log('componentWillMount')
-    }
-    render() {
-        SOCKET_CONNECT()
         // 检查token
         const { token } = this.props.userMsg,
             {navigate} = this.props.navigation
@@ -36,7 +42,8 @@ class Mood extends Component {
             // 跳转到登录
             navigate('Register')
         }
-
+    }
+    render() {
         const {userMsg, navigation} = this.props
         return (
             <View>
