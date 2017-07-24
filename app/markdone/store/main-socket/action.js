@@ -3,17 +3,21 @@
  */
 
 import {socket} from '../api/socket-init'
-import io from 'socket.io-client'
 
 const SET_SOCKET = function (socket) {
     return {
-        type: 'socket',
-        socket
+        // type: 'socket',
+        // socket
     }
 }
 
 const SOCKET_CONNECT = function (token) {
-    
+    try {
+        socket.io.opts.query.token = token
+    }catch (e) {
+        console.log(2)
+    }
+    socket.connect()
 }
 
 export {SOCKET_CONNECT}

@@ -84,7 +84,6 @@ let httpsServer = https.createServer(credentials, app)
  * socket
  * */
 let io = sockteIo(httpServer)
-let b = 1
 io.on('connection', function (socket) {
     console.log(socket.id)
     console.log(socket.handshake.query)

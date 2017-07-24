@@ -10,7 +10,6 @@ import SOCKET_CLIENT from 'socket.io-client'
 
 import {SOCKET_URL} from './config'
 
-
 let socket = SOCKET_CLIENT(SOCKET_URL, {
     autoConnect: false,
     query: {

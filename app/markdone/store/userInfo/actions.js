@@ -79,7 +79,7 @@ function loginByPhone(phone, psw) {
                     if (data.code === 'S200') {
                         dispatch(LOGIN_SUCCESS(data.data))
                         // 登录成功就连接
-                        SOCKET_CONNECT()
+                        SOCKET_CONNECT(data.data.token)
                     } else {
                         dispatch(LOGIN_FAIL(data.msg))
                     }
