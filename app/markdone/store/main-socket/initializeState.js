@@ -6,5 +6,8 @@ import * as TYPES from './../../type'
 
 export default {
     socket: '',
-    status: TYPES.USER_LOGIN_BEFORE
+    status: TYPES.SOCKET_CONNECT_BEFORT,
+    isInit: false,
+    initStatus: TYPES.SOCKET_BEFORE_INIT,
+    reconnectAttemptNumber: 0
 }

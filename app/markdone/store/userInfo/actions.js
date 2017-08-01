@@ -3,7 +3,6 @@
 * */
 import * as TYPES from './../../type.js'
 import {REGISTER_BY_PHONE, LOGIN_BY_PHONE } from '../api/login'
-import {SOCKET_CONNECT} from './../main-socket/action'
 
 import initializeState from './initializeState'
 

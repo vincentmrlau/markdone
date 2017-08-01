@@ -25,6 +25,12 @@ let serverConfig = {
         ssl: 3003,
         socket: 3004
     },
+    qiniu: {
+        accessKey:'os6og-VOzepEH-3GLSWHkeJedT2z3xovNuFGTICz',
+        secretKey: 'BAdU0oS9GfgIPw4xKs4UNA1ZSKsAynWjkMNMeGiZ',
+        bucket: 'markdone',
+        url: 'otmisqb23.bkt.clouddn.com'
+    },
     sslPsw: 'liu5998577'
 }
 

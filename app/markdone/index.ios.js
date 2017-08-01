@@ -6,7 +6,8 @@
 
 import React, { Component } from 'react';
 import {
-    AppRegistry
+    AppRegistry,
+    Text
 } from 'react-native';
 
 import { Provider } from 'react-redux'

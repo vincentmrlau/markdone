@@ -31,6 +31,7 @@ class Setting extends Component {
     }
 
     render() {
+        const {navigate} = this.props.navigation
         return (
             <View style={style.container}>
                 <List>
@@ -41,6 +42,7 @@ class Setting extends Component {
                                 name: 'account-circle'
                             }
                         }
+                        onPress={()=> {navigate('Profile')}}
                     />
                 </List>
             </View>

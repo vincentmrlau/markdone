@@ -21,6 +21,7 @@
 6. 日志系统： log4js
 7. 签名规则： id+过期时间
 8. 用户通过socket与后端交互
+9. 对象存储： 七牛云
 
 #### socket 实现方案 (1) 每次都要查表
 1. 记录每一个连接自动生成的id（每一个连接都会自动join一个room），记录在user_info的表上
@@ -56,7 +57,7 @@
 10. react-native-push-notifications 处理推送
 11. JPush-react-native
 12. UI Toolkit: react-native-element 没有风格，不过是大厂风范，文档全
-
+13. react-native-message-bar 信息提示框
 #### 备选
 1. react-native-gifted-chat 聊天窗口，长得像苹果短信
 2. weex,cordova,原生开发
