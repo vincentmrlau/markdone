@@ -27,6 +27,7 @@ import * as TYPES from './../../type'
 class Mood extends Component {
     constructor(props){
         super(props)
+        this.checkTokenConnect = this.checkTokenConnect.bind(this)
     }
     static navigationOptions = {
         title: '报表',
@@ -38,20 +39,20 @@ class Mood extends Component {
             />
         )
     }
-    componentWillMount(){
-        console.log('componentWillMount',this.props.socket.status)
-        // 检查token
+    // check token && connect
+    checkTokenConnect(){
         const { token } = this.props.userMsg,
             {navigate} = this.props.navigation,
             {socket} = this.props,
             {dispatch} = this.props
         if (token === undefined) {
             // 跳转到登录
-            navigate('Register')
+            return false
         } else {
             // 连接socket
             // 检测是否初始化
             if (socket.initStatus === TYPES.SOCKET_BEFORE_INIT) {
+                console.log(token)
                 // 初始化
                 dispatch(SOCKET_INIT(token))
             } else {
@@ -65,25 +66,22 @@ class Mood extends Component {
                 }
             }
         }
+        return true
+    }
+    componentWillMount(){
+        console.log('componentWillMount',this.props.socket.status)
+        // 检查token
+        if(this.checkTokenConnect()){
+            //
+        } else {
+            this.props.navigation.navigate('Register')
+        }
     }
     componentWillUpdate(){
         console.log('willUpdate')
         // update的时候也做同样的检测
-        const { token } = this.props.userMsg,
-            {socket} = this.props,
-            {dispatch} = this.props
-        // 检测是否初始化
-        if (socket.initStatus === TYPES.SOCKET_BEFORE_INIT) {
-            // 初始化
-            dispatch(SOCKET_INIT(token))
-        } else {
-            if (socket.status === TYPES.SOCKET_CONNECT_BEFORT) {
-                // 连接
-                dispatch(SOCKET_CONNECT())
-            } else {
-                // todo 处理其他情况
-            }
-        }
+        // 检查token
+        this.checkTokenConnect()
     }
     render() {
         const {userMsg, navigation} = this.props

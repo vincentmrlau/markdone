@@ -15,7 +15,12 @@ import {SOCKET_URL} from './config'
 * */
 import {
     SOCKET_CONNECT_ERROR,
-    SOCKET_CONNECT_SUCCESS
+    SOCKET_CONNECT_SUCCESS,
+    SOCKET_DISCONNECT,
+    SOCKET_RECONNECT_DOING,
+    SOCKET_RECONNECT_FAILED,
+    SOCKET_RECONNECT_ERROR,
+    SOCKET_RECONNECT_SUCCESS
 } from './../main-socket/action'
 let socket = SOCKET_CLIENT(SOCKET_URL, {
     autoConnect: false,
@@ -43,26 +48,36 @@ let socketInit = function (dispatch, getStates) {
     // 断开连接
     socket.on('disconnect', function (reason) {
         console.log('disconnect:', reason)
+        dispatch(SOCKET_DISCONNECT(reason))
     })
 
     // 重新连接尝试
     socket.on('reconnect_attempt', function (attemptNumber) {
         console.log('reconnect_attempt:', attemptNumber)
+        dispatch(SOCKET_RECONNECT_DOING(attemptNumber))
     })
 
     // 重新连接
     socket.on('reconnect', function (number) {
         console.log('reconnect', number)
+        dispatch(SOCKET_RECONNECT_SUCCESS(number))
     })
 
     // 重新连接尝试错误
     socket.on('reconnect_error', function (error) {
         console.log('reconnect_error:', error)
+        dispatch(SOCKET_RECONNECT_ERROR(error))
     })
 
     // 重连失败
     socket.on('reconnect_failed', function () {
         console.log('reconnect_failed')
+        dispatch(SOCKET_RECONNECT_FAILED())
+    })
+
+    // socket
+    socket.on('n', function (data) {
+        console.log(data)
     })
 }
 

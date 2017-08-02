@@ -12,6 +12,10 @@
 1.	mysql 
 2.	sequelize `promise-base`  `数据库操作`  http://docs.sequelizejs.com/en/latest/
 
+#### 通讯
+1. ~~长轮询~~
+2. socket
+
 ####	其他
 1.	HTTPS: `openssl`
 2.	jwt `https://www.npmjs.com/package/jwt-simple` `处理登录状态` 

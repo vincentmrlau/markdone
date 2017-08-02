@@ -3,7 +3,8 @@
 /node_modules
 
 ## ·şÎñÆ÷ÅäÖÃ
-/server/configs
+/server/configs/serverConfig.js
+/server/configs/vincent4u.cn.pfx
 /server/ssl
 ## app Ä£¿é
 /app/markdone/node_modules

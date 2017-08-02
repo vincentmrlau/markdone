@@ -47,6 +47,11 @@ module.exports = function (sequelize,DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: true,
             defaultValue:0
+        },
+        socket_id: {
+            // 连接的id
+            type: DataTypes.STRING,
+            allowNull: true
         }
     },{
 

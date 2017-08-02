@@ -3,6 +3,13 @@
  */
 "use strict";
 
+// 引入logger
+const loggers = require('./loggers')
+const startLog = loggers.startLog
+const socketLog = loggers.socketLog
+
+startLog.info('app start')
+
 // 引入库
 const http = require('http')
 const https = require('https')
@@ -11,9 +18,6 @@ const fs = require('fs')
 const path = require('path')
 const bodyParser = require('body-parser')
 const sockteIo = require('socket.io')
-
-// 引入log
-const log4js = require('./log/logger.js')
 
 // 引入配置
 const configs = require('./configs/serverConfig.js')
@@ -29,8 +33,7 @@ const SSL_PSW = configs.sslPsw
 const RESOLVE_NAME = path.resolve(__dirname)
 
 let app =  express()
-//使用log
-log4js(app)
+
 // 使用中间件
 /*
 * body 使用 x-www-form-urlencoded
@@ -57,6 +60,8 @@ app.all('*', function (req, res, next) {
 
 //引入路由
 const userInfo = require('./routers/userInfo.js')
+// 引入socket配置
+const socketInit = require('./routers/socket-init')
 
 // 静态文件路劲
 app.use('/static',express.static('./client/static'))
@@ -87,12 +92,7 @@ let io = sockteIo(httpServer)
 io.on('connection', function (socket) {
     console.log(socket.id)
     console.log(socket.handshake.query)
-    socket.emit('news', { hello: 'world' });
-    socket.on('my other event', function (data) {
-        console.log('my other event',data,socket.id);
-        socket.emit('news', { hello: socket.id });
-        console.log(socket.rooms)
-    });
+    socketInit(socket, socket.handshake.query.token)
 })
 
 httpServer.listen(PORT, function () {

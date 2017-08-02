@@ -34,8 +34,10 @@ fs
     .forEach(function (fileDir , index) {
         let model = sequelize.import(path.join(__dirname , fileDir));
         dbModels[model.name] = model;
-        //同步到数据库
-        model.sync();
+        // //同步到数据库
+        model.sync().then(function (result) {
+            console.log("result",result)
+        });
     });
 
 module.exports = dbModels;
