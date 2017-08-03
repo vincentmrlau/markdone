@@ -43,6 +43,12 @@ const AFTER_LOGIN = function () {
     }
 }
 
+const TOKEN_ERROR = function () {
+    return {
+        type: TYPES.TOKEN_ERROR
+    }
+}
+
 // register action creator
 function registerByPhone(phone, psw) {
     return ( dispatch ) => {

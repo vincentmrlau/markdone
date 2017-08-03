@@ -13,7 +13,13 @@ let startLog = log4js.getLogger('start')
 
 let socketLog = log4js.getLogger('socket')
 
+let httpLog = log4js.getLogger('http')
+
+let debugLog = log4js.getLogger('debug')
+
 module.exports = {
     startLog,
-    socketLog
+    socketLog,
+    httpLog,
+    debugLog
 }

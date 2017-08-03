@@ -52,6 +52,11 @@ module.exports = function (sequelize,DataTypes) {
             // 连接的id
             type: DataTypes.STRING,
             allowNull: true
+        },
+        uu_id: {
+            // 设备号
+            type: DataTypes.STRING,
+            allowNull: true
         }
     },{
 

@@ -75,10 +75,7 @@ let socketInit = function (dispatch, getStates) {
         dispatch(SOCKET_RECONNECT_FAILED())
     })
 
-    // socket
-    socket.on('n', function (data) {
-        console.log(data)
-    })
+
 }
 
 export {socket, socketInit}

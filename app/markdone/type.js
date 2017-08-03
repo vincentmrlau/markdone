@@ -10,6 +10,11 @@ export const USER_LOGIN_AFTER = 'USER_LOGIN_AFTER'
 export const USER_LOGIN_FAIL = 'USER_LOGIN_FAIL'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 
+// token status
+export const TOKEN_TIMEOUT = 'TOKEN_TIMEOUT'
+export const TOKEN_ERROR ='TOKEN_ERROR'
+export const TOKEN_FRESH = 'TOKEN_FRESH'
+
 // LOGOUT
 export const LOGOUT_DOING = 'LOGOUT_DOING'
 export const LOGOUT_FAIL = 'LOGOUT_FAIL'

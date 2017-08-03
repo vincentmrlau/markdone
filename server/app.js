@@ -6,7 +6,7 @@
 // 引入logger
 const loggers = require('./loggers')
 const startLog = loggers.startLog
-const socketLog = loggers.socketLog
+const debugLog = loggers.debugLog
 
 startLog.info('app start')
 

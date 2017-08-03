@@ -3,6 +3,9 @@
  */
 'use strict'
 
+// logger
+const log = require('./../loggers').socketLog
+
 const qiniu = require('qiniu')
 const qiniuConf = require('./../configs/serverConfig').qiniu
 
@@ -20,6 +23,10 @@ const options = {
 
 let putPolicy = new qiniu.rs.PutPolicy(options)
 
-let uploadToken = putPolicy.uploadToken(mac)
-
-console.log(uploadToken)
+module.exports = function (socket, userId) {
+    socket.on('qiniu_upload_token', (data, cb) => {
+        let uploadToken = putPolicy.uploadToken(mac)
+        log.info('七牛token',data)
+        cb(uploadToken)
+    })
+}

@@ -2,41 +2,54 @@
  * Created by liuyiman on 2017/8/1.
  */
 
-const checkToken = require('./../middleware/checktoken')
+'use strict'
+
+// const checkToken = require('./../middleware/checktoken')
+
+const log = require('./../loggers').socketLog
+
+// 引入事件
+const OnSocketConnect = require('./../middleware/on-socket-connect')
+
+const OnSocketDisconnect = require('./../middleware/on-socket-disconnect')
+
+// 七牛router
+const qiniuInit = require('./qiniu')
+
+// 解码
+const decodeToken = require('./../utils/userInfo').decodeToken
 
 /*
 * 初始化每一个socket
 * */
 module.exports = function (socket, token) {
+    let tokenMsg = decodeToken(token)
+    log.info('socket connected, token:', token)
     /*
     * 连接
     * */
-    console.log('socket connected, token:', token)
-    // 检查token
-    checkToken(token)
-        .then((project)=>{
-            console.log('检查token没问题',project)
-            socket.emit('n', project)
-        }, (error)=>{
-            switch (error.type){
-                case -1:
-                    // 用户不存在
-                    console.log('用户不存在：', error, token)
-                    break
-                case -2:
-                    // 登录过期
-                    console.log('登录过期：', error, token)
-                    break
-                case -3:
-                    // 其他错误
-                    console.log('其他错误', error, token)
-                    break
-                default:
-                    console.log('未定义错误类型', error, token)
-            }
-        })
-        .catch(function (e) {
-            // 发生服务器错误
 
+    /*
+    * 七牛
+    * */
+    qiniuInit(socket, tokenMsg.i)
+    /*
+     * 绑定用户断开连接事件
+     * */
+    OnSocketDisconnect(socket, tokenMsg.i)
+    /*
+    * 检查token
+    * 若token失效或用户不存在则通知客户端
+    * */
+    OnSocketConnect(socket, tokenMsg)
+        .then((userId) => {
+            // 检查成功
+            console.log(userId)
+
+        }, (error) => {
+            log.error('检验token错误', error)
+        })
+        .catch((e) => {
+            log.error('检验token错误', e)
         })
 }
