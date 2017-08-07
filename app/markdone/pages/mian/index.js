@@ -8,7 +8,7 @@ import { TabNavigator } from 'react-navigation'
 
 // 引入页面
 import Mood from './Mood'
-import Setting from './Setting'
+import Setting from './More'
 import React from 'react'
 import {
     StyleSheet

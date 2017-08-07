@@ -10,6 +10,7 @@ import { AsyncStorage } from 'react-native'
 // import reducer
 import { userMsg } from './userInfo/reducers'
 import {socket} from './main-socket/reducer'
+import {qiniuReducer} from './qiniu/index'
 
 /*
 * all reducer except navigation reducer
@@ -17,7 +18,8 @@ import {socket} from './main-socket/reducer'
 
 let allReducer = {
     userMsg: userMsg,
-    socket: socket
+    socket: socket,
+    qiniu: qiniuReducer
 }
 
 let defaultBlackList = [

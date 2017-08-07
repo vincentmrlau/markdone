@@ -73,13 +73,14 @@ class Register extends Component {
             }
         }
     }
-    componentDidUpdate() {
-        if (this.props.userMsg.loginStatus === TYPES.USER_LOGIN_FAIL) {
+    componentWillReceiveProps(nextProps) {
+        console.log('register')
+        if (nextProps.userMsg.loginStatus === TYPES.USER_LOGIN_FAIL) {
             // 登录失败的时候，转换成登录前的状态
-            this.props.dispatch(LOGIN_BEFORE())
-        } else if( this.props.userMsg.loginStatus === TYPES.LOGIN_SUCCESS) {
+            nextProps.dispatch(LOGIN_BEFORE())
+        } else if( nextProps.userMsg.loginStatus === TYPES.LOGIN_SUCCESS) {
             // 登陆成功，跳转到主页
-            this.props.navigation.navigate('Mood')
+            nextProps.navigation.navigate('Mood')
         }
     }
     render() {

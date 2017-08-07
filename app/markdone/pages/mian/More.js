@@ -29,6 +29,10 @@ class Setting extends Component {
             />
         )
     }
+    componentWillReceiveProps(nextProps){
+        console.log(nextProps)
+        console.log('componentWillReceiveProps Mood')
+    }
 
     render() {
         const {navigate} = this.props.navigation

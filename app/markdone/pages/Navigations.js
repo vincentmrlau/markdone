@@ -8,12 +8,17 @@ import {StackNavigator, addNavigationHelpers} from 'react-navigation'
 import { connect } from 'react-redux'
 
 // import pages
+import Operating from './Operating'
 import Main from './mian/index'
 import Login from './userInfo/Login'
 import Register from './userInfo/Register'
 import Profile from './userInfo/Profile'
+import Headshot from './userInfo/Headshot'
 
 const StackNav = StackNavigator({
+    Operating: {
+        screen: Operating
+    },
     Main: {
         screen: Main
     },
@@ -22,14 +27,17 @@ const StackNav = StackNavigator({
     },
     Profile: {
         screen: Profile
+    },
+    Headshot: {
+        screen: Headshot
     }
 }, {
 
 })
 
 // navigation 的初始状态
-const navInitialState = StackNav.router.getStateForAction(Main.router.getActionForPathAndParams('Mood'))
-// const navInitialState = StackNav.router.getStateForAction(StackNav.router.getActionForPathAndParams('Profile'))
+const navInitialState = StackNav.router.getStateForAction(StackNav.router.getActionForPathAndParams('Operating'))
+// const navInitialState = StackNav.router.getStateForAction(Main.router.getActionForPathAndParams('Mood'))
 const navReducer = ( state = navInitialState, action) => {
     let nextState = StackNav.router.getStateForAction(action, state)
     return nextState || state

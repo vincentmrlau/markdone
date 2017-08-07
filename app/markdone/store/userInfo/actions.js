@@ -24,6 +24,7 @@ const LOGIN_SUCCESS = function ( data = {} ) {
     return {
         type: TYPES.LOGIN_SUCCESS,
         loginStatus: TYPES.LOGIN_SUCCESS,
+        tokenStatus: TYPES.TOKEN_FRESH,
         responseData: data
     }
 }
@@ -43,9 +44,12 @@ const AFTER_LOGIN = function () {
     }
 }
 
-const TOKEN_ERROR = function () {
+// token错误
+const TOKEN_ERROR = function (msg) {
     return {
-        type: TYPES.TOKEN_ERROR
+        type: TYPES.TOKEN_ERROR,
+        loginStatus: TYPES.TOKEN_ERROR,
+        alertMsg:msg
     }
 }
 
@@ -99,5 +103,6 @@ function loginByPhone(phone, psw) {
 export {
     registerByPhone,
     LOGIN_BEFORE,
-    loginByPhone
+    loginByPhone,
+    TOKEN_ERROR
 }

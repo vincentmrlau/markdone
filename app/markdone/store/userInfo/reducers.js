@@ -28,6 +28,7 @@ export function userMsg (state = initializeState, action) {
             return {
                 ...state,
                 loginStatus: action.loginStatus,
+                tokenStatus: action.tokenStatus,
                 ...action.responseData
             }
             break
@@ -46,8 +47,15 @@ export function userMsg (state = initializeState, action) {
                 loginStatus: action.loginStatus
             }
             break
+        // 登陆过期
+        case TYPES.TOKEN_ERROR:
+            return {
+                ...state,
+                loginStatus: action.loginStatus,
+                alertMsg: action.alertMsg
+            }
+            break
         default:
-            console.log('de')
             return state
     }
 }

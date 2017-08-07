@@ -24,7 +24,6 @@ module.exports = function (token) {
         if (tokenMsg.e >= moment().unix()) {
             // 未过期
             // 查找用户
-            console.log('')
             userDb
                 .findOne({
                     where: {

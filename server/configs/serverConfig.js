@@ -29,7 +29,8 @@ let serverConfig = {
         accessKey:'os6og-VOzepEH-3GLSWHkeJedT2z3xovNuFGTICz',
         secretKey: 'BAdU0oS9GfgIPw4xKs4UNA1ZSKsAynWjkMNMeGiZ',
         bucket: 'markdone',
-        url: 'otmisqb23.bkt.clouddn.com'
+        url: 'http://otmisqb23.bkt.clouddn.com',
+        expires: 30
     },
     sslPsw: 'liu5998577'
 }

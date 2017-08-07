@@ -7,11 +7,17 @@
 import React, {Component} from 'react'
 import {
     View,
-    Text
+    Text,
+    Alert,
+    AsyncStorage
 } from 'react-native'
 import {
     Icon
 } from 'react-native-elements'
+
+import {
+    NavigationActions
+} from 'react-navigation'
 
 // redux
 import {connect} from 'react-redux'
@@ -40,25 +46,48 @@ class Mood extends Component {
         )
     }
     // check token && connect
-    checkTokenConnect(){
-        const { token } = this.props.userMsg,
-            {navigate} = this.props.navigation,
-            {socket} = this.props,
-            {dispatch} = this.props
-        if (token === undefined) {
-            // 跳转到登录
-            return false
+    checkTokenConnect(props){
+        // 已经跳转到其他地方了就return
+        const { userMsg } = props,
+            {navigate} = props.navigation,
+            {socket} = props,
+            {dispatch} = props
+        // 不是登录成功的状态区分跳转
+        if (userMsg.loginStatus !== TYPES.LOGIN_SUCCESS) {
+            if (this._isNavigated) {
+                return false
+            } else {
+                this._isNavigated = true
+                // 提示原因
+                Alert.alert('登录状态错误',userMsg.alertMsg,[
+                    {
+                        text:'OK',
+                        onPress: () => {
+                            // 跳转到登录界面并清空
+                            const resetAction = NavigationActions.reset({
+                                index: 0,
+                                actions: [
+                                    NavigationActions.navigate({ routeName: 'Register'})
+                                ]
+                            })
+                            props.navigation.dispatch(resetAction)
+                        }
+                    }
+                ])
+                return false
+            }
         } else {
+            // 登录成功的状态
+            this._isNavigated = false
             // 连接socket
             // 检测是否初始化
             if (socket.initStatus === TYPES.SOCKET_BEFORE_INIT) {
-                console.log(token)
+                console.log(userMsg.toke)
                 // 初始化
-                dispatch(SOCKET_INIT(token))
+                dispatch(SOCKET_INIT(userMsg.token))
             } else {
                 console.log(socket.status)
-                if (socket.status === TYPES.SOCKET_CONNECT_BEFORT) {
-                    console.log(socket.status)
+                if (socket.status === TYPES.SOCKET_CONNECT_BEFORT || socket.status === TYPES.SOCKET_CONNECT_DISCONNECT) {
                     // 连接
                     dispatch(SOCKET_CONNECT())
                 } else {
@@ -68,26 +97,20 @@ class Mood extends Component {
         }
         return true
     }
-    componentWillMount(){
-        console.log('componentWillMount',this.props.socket.status)
-        // 检查token
-        if(this.checkTokenConnect()){
-            //
-        } else {
-            this.props.navigation.navigate('Register')
-        }
+    componentWillReceiveProps(nextProps){
+        console.log('nextProps',nextProps)
+        this.checkTokenConnect(nextProps)
     }
-    componentWillUpdate(){
-        console.log('willUpdate')
-        // update的时候也做同样的检测
-        // 检查token
-        this.checkTokenConnect()
+    componentWillMount(){
+        console.log('willMout',this.props)
+        // 解决跳转多次触发跳转导致内存泄漏的问题
+        this._isNavigated = false
+        this.checkTokenConnect(this.props)
     }
     render() {
-        const {userMsg, navigation} = this.props
         return (
             <View>
-                <Text>s</Text>
+                <Text></Text>
             </View>
         )
     }

@@ -14,17 +14,26 @@ const decodeToken = require('./../utils/userInfo').decodeToken
 const moment = require('moment')
 
 const disconnectSocket = function (socket, type, msg, cb) {
+    // 10秒后无论如何都断开连接
+    let disconnectTimer = setTimeout(function () {
+        socket.disconnect(true)
+        if (cb) {
+            cb()
+        }
+    }, 10000)
     socket.emit('token_error', {
         type: type,
         msg: msg
-    }, () => {
+    }, (data) => {
         // callback
+        clearTimeout(disconnectTimer)
+        socket.disconnect(true)
+        if (cb) {
+            cb()
+        }
     })
-    socket.disconnect(true)
-    if (cb) {
-        cb()
-    }
 }
+
 
 /*
 * 错误类型： type

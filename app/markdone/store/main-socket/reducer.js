@@ -9,11 +9,10 @@ import * as TYPES from './../../type'
 * 
 * */
 let socket = function (state = initializeState, action) {
-    let returnStates = {
-        ...state,
-        ...action
+    let returnStates = {}
+    for (let x in state) {
+        returnStates[x] = action[x] || state[x]
     }
-    returnStates.type = null
 
     return returnStates
 }
