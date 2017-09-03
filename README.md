@@ -67,7 +67,7 @@
 #### 备选
 1. react-native-gifted-chat 聊天窗口，长得像苹果短信
 2. weex,cordova,原生开发
-3. react-native-ui-kitten 喜欢这款，不过star太少，组件不全
+3. ~~react-native-ui-kitten 喜欢这款，不过star太少，组件不全~~
 4. NativeBase
 
 #### 数据存储与账号切换

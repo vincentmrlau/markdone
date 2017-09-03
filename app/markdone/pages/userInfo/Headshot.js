@@ -10,24 +10,17 @@ import {
     Image
 } from 'react-native'
 
-import ImageViewer from 'react-native-image-pan-zoom'
+import ImageZoomViewer from 'react-native-single-image-zoom-viewer'
 
 class Headshot extends React.Component {
     constructor(props){
         super(props)
-        this.state.headshotSource = require('./../../assets/default-headshot.png')
     }
-
     render(){
         return(
-            <ImageViewer cropWidth={Dimensions.get('window').width}
-                         cropHeight={Dimensions.get('window').height}
-                         imageWidth={200}
-                         imageHeight={200}>
-                <Image style={{width:200, height:200}} source={this.state.headshotSource}/>
-            </ImageViewer>
+            <ImageZoomViewer source={require('./../../assets/default-headshot.png')}/>
             )
     }
 }
 
-export default ImageViewer
+export default Headshot

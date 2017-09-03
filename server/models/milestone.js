@@ -13,7 +13,6 @@ module.exports = function (sequelize,DataTypes) {
             primaryKey:true
         },
         user_id:{
-            //用户ID，主键
             type:DataTypes.UUID,
             allowNull:false
         },
